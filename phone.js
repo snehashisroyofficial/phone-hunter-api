@@ -86,17 +86,12 @@ const showPhoneDetails = (phone) => {
 <img class="p-10 mx-auto" src="${phone.image}" alt="">
 <p><span class="font-bold">GPS:</span>${phone.mainFeatures.displaySize}</p>
 <p><span class="font-bold">GPS:</span>${phone.mainFeatures.memory}</p>
-<p><span class="font-bold">GPS:</span>${phone.mainFeatures.chipSet}</p>
+<p><span class="font-bold">Chipset:</span>${phone.mainFeatures.chipSet}</p>
 <p><span class="font-bold">Storage:</span>${phone.mainFeatures.storage}</p>
 <p><span class="font-bold">GPS:</span>${phone.others.GPS}</p>
 <p><span class="font-bold">GPS:</span>${phone.others.releaseDate}</p>
 
-
-    
-    
     `;
-
-
 
     show_details_modal.showModal();
 }
