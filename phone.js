@@ -88,7 +88,7 @@ const showPhoneDetails = (phone) => {
 <p><span class="font-bold">MEMORY: </span>${phone.mainFeatures.memory}</p>
 <p><span class="font-bold">CHIPSET: </span>${phone.mainFeatures.chipSet}</p>
 <p><span class="font-bold">STORAGE: </span>${phone.mainFeatures.storage}</p>
-<p><span class="font-bold">GPS: </span>${phone.others.GPS}</p>
+<p><span class="font-bold">GPS: </span>${phone.others?.GPS || 'No GPS Available'}</p>
 <p><span class="font-bold">RELEASE DATE: </span>${phone.releaseDate}</p>
 
     `;
