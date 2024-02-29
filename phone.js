@@ -84,12 +84,12 @@ const showPhoneDetails = (phone) => {
     
 <h1 class="text-3xl font-bold text-center">${phone.name}</h1>
 <img class="p-10 mx-auto" src="${phone.image}" alt="">
-<p><span class="font-bold">GPS:</span>${phone.mainFeatures.displaySize}</p>
-<p><span class="font-bold">GPS:</span>${phone.mainFeatures.memory}</p>
-<p><span class="font-bold">Chipset:</span>${phone.mainFeatures.chipSet}</p>
-<p><span class="font-bold">Storage:</span>${phone.mainFeatures.storage}</p>
-<p><span class="font-bold">GPS:</span>${phone.others.GPS}</p>
-<p><span class="font-bold">GPS:</span>${phone.others.releaseDate}</p>
+<p><span class="font-bold">DISPLAY: </span>${phone.mainFeatures.displaySize}</p>
+<p><span class="font-bold">MEMORY: </span>${phone.mainFeatures.memory}</p>
+<p><span class="font-bold">CHIPSET: </span>${phone.mainFeatures.chipSet}</p>
+<p><span class="font-bold">STORAGE: </span>${phone.mainFeatures.storage}</p>
+<p><span class="font-bold">GPS: </span>${phone.others.GPS}</p>
+<p><span class="font-bold">RELEASE DATE: </span>${phone.releaseDate}</p>
 
     `;
 
