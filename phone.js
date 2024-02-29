@@ -1,4 +1,4 @@
-const loadPhone = async (searchText, isShowAll) => {
+const loadPhone = async (searchText = 'samsung', isShowAll) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
     const data = await res.json();
     const phones = data.data;
@@ -50,8 +50,8 @@ const displayPhones = (phones, isShowAll) => {
         <div class="card-body">
             <h2 class="card-title">${phone.phone_name}</h2>
             <p>${phone.slug}</p>
-            <div class="card-actions justify-end">
-                <button class="btn w-full bg-green-700 text-white  text-2xl">Buy Now</button>
+            <div class="card-actions justify-center">
+                <button onclick="handleShowDetails('${phone.slug}')" class="btn bg-green-700 text-white  text-2xl">Show Details</button>
             </div>
         </div>
         
@@ -66,6 +66,40 @@ const displayPhones = (phones, isShowAll) => {
 
 }
 
+
+
+// show details 
+const handleShowDetails = async (id) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+    const data = await res.json();
+    const phone = data.data;
+    showPhoneDetails(phone)
+}
+
+//modal show
+const showPhoneDetails = (phone) => {
+    console.log(phone);
+    const showDetailsContainer = document.getElementById('show-detail-container');
+    showDetailsContainer.innerHTML = `
+    
+<h1 class="text-3xl font-bold text-center">${phone.name}</h1>
+<img class="p-10 mx-auto" src="${phone.image}" alt="">
+<p><span class="font-bold">GPS:</span>${phone.mainFeatures.displaySize}</p>
+<p><span class="font-bold">GPS:</span>${phone.mainFeatures.memory}</p>
+<p><span class="font-bold">GPS:</span>${phone.mainFeatures.chipSet}</p>
+<p><span class="font-bold">Storage:</span>${phone.mainFeatures.storage}</p>
+<p><span class="font-bold">GPS:</span>${phone.others.GPS}</p>
+<p><span class="font-bold">GPS:</span>${phone.others.releaseDate}</p>
+
+
+    
+    
+    `;
+
+
+
+    show_details_modal.showModal();
+}
 
 // onclick event handler to search button
 const handleSearch = (isShowAll) => {
@@ -111,3 +145,5 @@ const toggleLoadingSpinner = (isLoading) => {
 const handleShowAll = () => {
     handleSearch(true);
 }
+
+loadPhone()
